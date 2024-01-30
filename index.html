@@ -61,19 +61,21 @@
                 <option value="multiple">Multiple Choice</option>
                 <option value="boolean">True / False</option>
             </select>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn submit-quiz_info">Submit</button>
         </form>
 
         <!-- displaying the question  -->
 
-        <form class="quiz_answer form hidden">
+        <form class="quiz_question form hidden">
             <h2 class="heading">Simpel Quiz</h2>
-            <label class="quiz_question">1. Which is the largest animal in the world</label>
-            <button class="form-control">Answer 1</button>
-            <button class="form-control">Answer 2</button>
-            <button class="form-control">Answer 3</button>
-            <button class="form-control">Answer 4</button>
-            <button class="btn btn-secondary">Submit</button>
+            <div class="question_cont">
+                <label class="quiz_question">1. Which is the largest animal in the world</label>
+                <button class="form-control">Answer 1</button>
+                <button class="form-control">Answer 2</button>
+                <button class="form-control">Answer 3</button>
+                <button class="form-control">Answer 4</button>
+            </div>
+            <button class="btn submit-quiz_question">Submit</button>
         </form>
 
     </header>

@@ -84,6 +84,14 @@ label {
     font-weight: 600;
 }
 
+.btn:hover {
+    background-color: #5c6378;
+}
+
+.question_cont {
+    width: 100%;
+    text-align: start;
+}
 
 .quiz_question {
     font-size: 18px;
