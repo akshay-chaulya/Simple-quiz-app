@@ -15,6 +15,7 @@ body {
     background-color: #383e4e;
     color: white;
     font-family: sans-serif;
+    position: relative;
 }
 
 .nav {
@@ -84,8 +85,24 @@ label {
     font-weight: 600;
 }
 
-.btn:hover {
+.btn_hover:hover {
     background-color: #5c6378;
+    color: #ffff;
+}
+
+.user_click {
+    background-color: black;
+    color: #ffff;
+}
+
+.right_ans {
+    background-color: green;
+    color: #ffff;
+}
+
+.wrong_ans {
+    background-color: red;
+    color: #ffff;
 }
 
 .question_cont {
@@ -98,6 +115,52 @@ label {
     margin: 10px 0;
 }
 
+.quiz_question-btns {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.page_btn {
+    width: 20%;
+}
+
+
+.overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.434);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.erro_cont {
+    position: relative;
+    background-color: #ffff;
+    color: black;
+    min-height: 150px;
+    min-width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.close_btn {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    border: none;
+    background-color: #ffff;
+}
+
+.erro_cont p {
+    margin: auto;
+}
 
 
 

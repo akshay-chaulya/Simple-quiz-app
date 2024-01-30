@@ -14,6 +14,10 @@ export default class View {
         this._otherEl.classList.toggle("hidden");
     }
 
+    renderError(message = this._errorMessage) {
+        alert(message);
+    }
+
     _clear() {
         this._parentEl.innerHTML = '';
     }
