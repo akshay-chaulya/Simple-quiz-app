@@ -14,7 +14,7 @@ export const setQuestions = async function (formData) {
         state.quizInfo = { amount, category, difficulty, type };
 
         const infoData = state.quizInfo;
-        const urlLastPart = `${infoData.category ? `&category=${infoData.category}` : ''}${infoData.difficulty ? `&difficulty=${infoData.difficulty}` : ''}${infoData.type ? `&type=${data.type}` : ''}`;
+        const urlLastPart = `${infoData.category !== '' ? `&category=${infoData.category}` : ''}${infoData.difficulty !== '' ? `&difficulty=${infoData.difficulty}` : ''}${infoData.type !== '' ? `&type=${infoData.type}` : ''}`;
 
         const data = await getJSON(`${API_URL}amount=${infoData.amount}${urlLastPart}`);
 

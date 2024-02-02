@@ -1,37 +1,37 @@
 import View from "./view";
 class QuestionView extends View {
     _parentEl = document.querySelector(".question_cont");
-    _submitBtn = document.querySelector(".submit-quiz_question");
-    _questionForm = document.querySelector(".quiz_question");
+    _question = document.querySelector(".quiz_question");
     _errorMessage = "Please enter an option first :)";
     _allOptionBtn;
 
     constructor() {
         super();
-        this.selectUserAnser();
+        this._selectUserAnser();
     }
 
     addHandlerSubmit(handler) {
-        this._questionForm.addEventListener("submit", function (e) {
+        this._question.addEventListener("submit", function (e) {
             e.preventDefault();
-            // some error will show the user
+            const btn = e.target.closest(".submit-quiz_question");
+            // if (!btn) return;
             if (this.dataset.userAns)
                 handler();
         })
     }
 
     _generateMarkup() {
+        // console.log(this._data)
         return this._data.map(this._generateMarkupPrivew).join();
     }
 
     _generateMarkupPrivew(ques) {
         return `
         <label class="quiz_question">${ques.questionId}. ${ques.question}</label>
-        ${ques.option.map(op => `<button value="${op}" class="btn_hover form-control">${op}</button>`).join('')}
-        `;
+        ${ques.option.map(op => `<button value="${op}" class="btn_hover form-control">${op}</button>`).join('')}`;
     }
 
-    selectUserAnser(handler) {
+    _selectUserAnser() {
         this._parentEl.addEventListener("click", this._selectUserAnserPreview.bind(this));
     }
 
@@ -39,7 +39,7 @@ class QuestionView extends View {
         e.preventDefault();
         const btn = e.target.closest(".form-control");
         if (!btn) return;
-        this._questionForm.dataset.userAns = btn.value;
+        this._question.dataset.userAns = true;
         // will some chang
         this._allOptionBtn = this._parentEl.querySelectorAll(".form-control");
         this._allOptionBtn.forEach(op => op.classList.remove("user_click"));
