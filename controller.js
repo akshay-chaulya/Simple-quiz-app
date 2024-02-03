@@ -15,7 +15,9 @@ const controlQuizInfo = async function (formData) {
         questionView.render(model.getQuestionPerPage());
 
     } catch (err) {
-        console.error('🔥🔥🔥' + err);
+        if (err) {
+            alert('some network problem please refresh the page or try later')
+        }
     }
 }
 
