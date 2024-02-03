@@ -2,6 +2,7 @@ import View from "./view";
 class QuestionView extends View {
     _parentEl = document.querySelector(".question_cont");
     _question = document.querySelector(".quiz_question");
+    _userAns = document.querySelector(".userAns");
     _errorMessage = "Please enter an option first :)";
     _allOptionBtn;
 
@@ -11,12 +12,13 @@ class QuestionView extends View {
     }
 
     addHandlerSubmit(handler) {
-        this._question.addEventListener("submit", function (e) {
+        this._question.addEventListener("submit", (e) => {
             e.preventDefault();
             const btn = e.target.closest(".submit-quiz_question");
             // if (!btn) return;
-            if (this.dataset.userAns)
-                handler();
+            if (this._userAns.value)
+                handler(+this._userAns.value);
+            // else ;
         })
     }
 
@@ -39,7 +41,11 @@ class QuestionView extends View {
         e.preventDefault();
         const btn = e.target.closest(".form-control");
         if (!btn) return;
-        this._question.dataset.userAns = true;
+
+        if (this._data[0].correctAnswer === btn.value)
+            this._userAns.value = 1;
+        else this._userAns.value = 0;
+
         // will some chang
         this._allOptionBtn = this._parentEl.querySelectorAll(".form-control");
         this._allOptionBtn.forEach(op => op.classList.remove("user_click"));
@@ -59,6 +65,16 @@ class QuestionView extends View {
             btn.setAttribute("disabled", true);
             btn.classList.remove("btn_hover");
         })
+    }
+
+    displayingUserPoint(state) {
+        if (state.curPage === state.questions.length) {
+            setTimeout(() => {
+                this._question.classList.add("hidden");
+                document.querySelector(".conclution").innerHTML = `Out of ${state.questions.length} question your ${state.point} right`;
+                document.querySelector(".user_point").classList.remove('hidden');
+            }, 1000)
+        }
     }
 
 }

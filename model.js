@@ -6,6 +6,7 @@ export const state = {
     questions: [],
     curPage: 1,
     questionPerPage: QUES_PER_PAGE,
+    point: 0,
 }
 
 export const setQuestions = async function (formData) {
@@ -41,4 +42,8 @@ export const getQuestionPerPage = function (page = state.curPage) {
     const start = (page - 1) * state.questionPerPage;
     const end = page * state.questionPerPage;
     return state.questions.slice(start, end);
+}
+
+export const setUserPoint = function (userPoin) {
+    state.point += userPoin;
 }

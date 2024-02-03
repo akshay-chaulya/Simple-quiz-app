@@ -125,6 +125,15 @@ label {
     width: 20%;
 }
 
+.user_point {
+    width: 100%;
+    margin-top: 70px;
+}
+
+.conclution {
+    font-size: 25px;
+}
+
 
 .overlay {
     position: absolute;

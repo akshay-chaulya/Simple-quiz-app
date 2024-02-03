@@ -68,6 +68,7 @@
 
         <form class="quiz_question form hidden">
             <h2 class="heading">Simpel Quiz</h2>
+            <input type="text" class="userAns" hidden>
             <div class="question_cont">
                 <label class="quiz_question">1. Which is the largest animal in the world</label>
                 <button class="btn_hover user_click form-control">Answer 1</button>
@@ -81,6 +82,11 @@
                 <button class="btn btn_hover page_btn submit-quiz_question">Next</button> -->
             </div>
         </form>
+
+        <div class="user_point hidden">
+            <p class="conclution">Out of 10 question your 2 right</p>
+            <button class="btn" onclick="window.location.reload()">Go to Home</button>
+        </div>
 
         <div class="overlay hidden">
             <div class="erro_cont">

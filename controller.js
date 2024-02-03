@@ -19,12 +19,18 @@ const controlQuizInfo = async function (formData) {
     }
 }
 
-const controlQuestion = function () {
+const controlQuestion = function (userPoint) {
     // rendering right answer or wrong answer 
     questionView.renderRightAns();
 
+    // set user point 
+    model.setUserPoint(userPoint)
+
     // render pagitination 
     paginationView.render(model.state);
+
+    // render user point 
+    questionView.displayingUserPoint(model.state)
 }
 
 const controlPagination = function (page) {

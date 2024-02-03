@@ -14,7 +14,9 @@ class PaginationView extends View {
     }
 
     _generateMarkup() {
-        return `<button data-goto="${this._data.curPage + 1}" class="btn btn_hover page_btn">Next</button>`;
+        if (this._data.curPage < this._data.questions.length)
+            return `<button data-goto="${this._data.curPage + 1}" class="btn btn_hover page_btn">Next</button>`;
+        else return '<button class="btn btn_hover submit-quiz_question">Submit</button>';
     }
 
 }

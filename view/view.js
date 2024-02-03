@@ -14,9 +14,11 @@ export default class View {
         this._otherEl.classList.toggle("hidden");
     }
 
-    renderError(message = this._errorMessage) {
-        alert(message);
-    }
+    // renderError(message = this._errorMessage) {
+    //     console.log(this._overlay)
+    //     document.querySelector(".erro_msg").innerHTML = message;
+    //     this._overlay.classList.toggle("hidden");
+    // }
 
     _clear() {
         this._parentEl.innerHTML = '';
